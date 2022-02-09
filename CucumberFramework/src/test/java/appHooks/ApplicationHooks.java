@@ -38,15 +38,15 @@ public class ApplicationHooks {
 		driver.quit();
 	}
 	
-//	@After(order=1)
-//	public void takeScreenshot(Scenario scenario) {
-//		if(scenario.isFailed()) {
-//			String screenShotName=scenario.getName().replaceAll(" ", "_");
-//			byte[] sourcePath=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-//			scenario.attach(sourcePath, "image/png", screenShotName);
-//			
-//			
-//		}
-//	}
+	@After(order=1)
+	public void takeScreenshot(Scenario scenario) {
+		if(scenario.isFailed()) {
+			String screenShotName=scenario.getName().replaceAll(" ", "_");
+			byte[] sourcePath=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(sourcePath, "image/png", screenShotName);
+			
+			
+		}
+	}
 
 }

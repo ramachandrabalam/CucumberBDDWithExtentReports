@@ -9,35 +9,31 @@ import org.openqa.selenium.WebElement;
 
 public class Myaccountpage {
 	private WebDriver driver;
-	private WebElement menuDriver;
-	private By myAccountMenu = By.cssSelector(".woocommerce-MyAccount-navigation");
-	private By myAccountItems = By.tagName("a");
 	List<String> actualList = new ArrayList<>();
+	private By myAccountMenuItems = By.xpath("//nav[@class='woocommerce-MyAccount-navigation']/ul/li");
 	public Myaccountpage(WebDriver driver) {
 		
 		this.driver=driver;
 	}
 	
 	
-	public void myAccountMenu() {
-		WebElement menuDriver =driver.findElement(myAccountMenu);
-	}
-	
-	public List<String> myAccountItems() {
-		List<WebElement> items=menuDriver.findElements(myAccountItems);
-		for(int i=0;i<items.size();i++) {
-			String menuItems=menuDriver.findElements(myAccountItems).get(i).getText();
-			 actualList.add(menuItems);
+	public List<String> myAccountMenu() {
+		List<WebElement> listItems=driver.findElements(myAccountMenuItems);
+		for(int i=0;i<listItems.size(); i++) {
+			String listName=listItems.get(i).getText();
+			actualList.add(listName);
 		}
 		return actualList;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
