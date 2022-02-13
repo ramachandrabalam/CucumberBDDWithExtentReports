@@ -40,9 +40,7 @@ public class MyaccountpageSteps {
 
 	@Then("^verify the items are (\\d+)$")
 	public void verify_the_items_are(int itemsCount) throws Throwable {
-		int actualCount=myAccountpage.myAccountMenu().size();
-		System.out.println(myAccountpage);
-		System.out.println(itemsCount);
+		int actualCount=myAccountpage.menuItemsCount();
 		Assert.assertEquals(itemsCount, actualCount);
 	}
 }

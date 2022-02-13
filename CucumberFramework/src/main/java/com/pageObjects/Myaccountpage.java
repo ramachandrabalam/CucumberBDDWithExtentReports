@@ -25,6 +25,12 @@ public class Myaccountpage {
 		}
 		return actualList;
 	}
+	
+	public int menuItemsCount() {
+		int itemCount =driver.findElements(myAccountMenuItems).size();
+		return itemCount;
+	}
+	
 }
 
 	
